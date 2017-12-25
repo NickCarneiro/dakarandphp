@@ -1,0 +1,11 @@
+# intellij project files
+.idea/
+*.iml
+
+# for osx development
+.DS_Store
+
+*.swo
+
+npm-debug.log
+

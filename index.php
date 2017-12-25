@@ -26,8 +26,8 @@ function get_fair_bit(): bool {
 }
 
 function get_random_byte(): int {
-  // php ints are 16 bits
-  $n = 0x0000;
+  // php ints are 32 bits on my machine, but we're only looking at the LSB
+  $n = 0x00;
   for ($bits = 0; $bits < 8; $bits++) {
     // shift $n one bit to the left
     $n <<= 1;
