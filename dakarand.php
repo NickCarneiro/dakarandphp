@@ -1,13 +1,13 @@
 <?php
-function get_wall_clock_millis(): int {
+function get_wall_clock_micros(): int {
   // milliseconds are to the left of the decimal, just take those with floor
-  return intval(floor(microtime(TRUE)));
+  return intval(microtime(TRUE) * 10000, 10);
 }
 function flip_coin(): bool {
   $n = FALSE;
-  $then = get_wall_clock_millis() + 1;
+  $then = get_wall_clock_micros() + 1;
   // the # of iterations of this loop should be non-deterministic, but biased
-  while (get_wall_clock_millis() <= $then) {
+  while (get_wall_clock_micros() <= $then) {
     $n = !$n;
   }
   return $n;
@@ -39,5 +39,7 @@ function get_random_byte(): int {
   return $n;
 }
 
-$byte = get_random_byte();
-echo decbin($byte) . "\n";
+for($i = 0; $i < 1000; $i++) {
+  $random_bit = get_fair_bit();
+  echo $random_bit ? '1' : '0';
+}
