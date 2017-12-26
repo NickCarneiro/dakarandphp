@@ -9,6 +9,4 @@ https://gist.github.com/PaulCapestany/6148566
 
 I picked up a copy of `PoC || GTFO` from Barnes and Noble and this snippet was in there.
 
-Pretty neat.
-
-It takes about a minute to generate a single byte on my machine.
+Pretty neat. This is much faster than the JavaScript implementation because we can a microseconds wall clock instead of millis.
